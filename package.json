@@ -1,0 +1,19 @@
+{
+  "name": "not-another-lru-cache",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "mocha -r esm test/*.test.js"
+  },
+  "author": "Michael Diakonov",
+  "license": "ISC",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "mocha": "^10.2.0"
+  }
+}
