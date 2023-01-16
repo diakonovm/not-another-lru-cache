@@ -26,7 +26,7 @@ export default class LRUCache {
       this._list.touch(node)
     }
 
-    return node.value
+    return node.data.value
   }
 
   set(key, value) {
@@ -39,18 +39,16 @@ export default class LRUCache {
     }
 
     if (this._list.capacity === this.capacity) {
-      const expired = this._list.snip()
+      const expired = this._list.pop()
       delete this._cache[expired.data.key]
     }
 
-    this._list.unshift(new KVPair(key, value))
-
-    this_cache[key] = item
+    this._cache[key] = this._list.unshift(new KVPair(key, value))
   }
 
 }
 
-class KVPair {
+export class KVPair {
   constructor(key, value) {
     this.key = key
     this.value = value

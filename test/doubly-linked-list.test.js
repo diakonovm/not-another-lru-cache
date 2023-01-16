@@ -11,11 +11,11 @@ describe('DoublyLinkedList', function() {
       list.unshift(3)
       list.unshift(2)
       list.unshift(1)
-  
-      const arr = [1, 2, 3]
+      
       const actual = list._toArray()
+      const expected = [1, 2, 3]
   
-      assert.deepStrictEqual(arr, actual)
+      assert.deepStrictEqual(actual, expected)
       assert.equal(list.head.data, 1)
 
       const tail = list.head.prev
@@ -42,10 +42,10 @@ describe('DoublyLinkedList', function() {
 
       list.pop()
 
-      const arr = [1, 2]
       const actual = list._toArray()
-
-      assert.deepStrictEqual(arr, actual)
+      const expected = [1, 2]
+      
+      assert.deepStrictEqual(actual, expected)
       assert.equal(list.head.prev.data, 2)
     })
 
